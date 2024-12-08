@@ -15,7 +15,7 @@ export function Features(){
   return(
     <main className="w-full gap-1 flex flex-col">
       <motion.h1 initial = {{opacity: 0}} whileInView = {{opacity: 1}} transition = {{duration: 0.3}} className="text-2xl font-bold text-black dark:text-white border-b-2 border-b-primary pb-1 mb-2">What Makes Zephyr Awesome?</motion.h1>
-      {features.map(feature => <FeatureCard content={feature.text} header={feature.header} image={feature.image}/>)}
+      {features.map((feature, i) => <FeatureCard key={i} content={feature.text} header={feature.header} image={feature.image}/>)}
     </main>
   )
 }
