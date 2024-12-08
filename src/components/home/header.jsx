@@ -9,7 +9,7 @@ export function Header(){
   /*const [ menu, setMenu ] = useState(false);*/
   const router = useRouter();
   return(
-    <motion.main transition={{duration: 0.3}} initial={{x: -300, opacity: 0}} animate={{x: 0, opacity: 1}} className="sticky top-0 left-0 flex w-full flex-col items-center">
+    <motion.main transition={{duration: 0.3}} initial={{x: -300, opacity: 0}} animate={{x: 0, opacity: 1}} className="sticky top-0 left-0 flex w-full flex-col items-center z-50">
       <header className="sticky top-0 left-0 flex justify-between w-full p-2 py-2 border-b backdrop-blur-sm">
         <h1 className="text-2xl text-primary font-bold">Zephyr</h1>
         {/*!menu ? <CiMenuFries className="text-xl" onClick={() => setMenu(true)}/> : <IoClose className="text-xl" onClick={() => setMenu(false)}/>*/}
