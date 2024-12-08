@@ -9,7 +9,7 @@ export function About(){
       />
       <section className="flex flex-col z-0 backdrop-blur-sm p-2 w-[90vw] z-[10]">
         <h1 className="text-2xl text-black dark:text-white border-b-primary border-b-2 w-fit text-white">About the Developer</h1>
-        <p className="text-muted-foreground text-md text-white dark:text-black">Built by a Teen, For Everyone</p>
+        <p className="text-primary text-md">Built by a Teen, For Everyone</p>
         <section className="flex flex-col justify-center items-center w-full text-md">
           <p className="text-sm text-center text-white">Zephyr was built by 17-year-old Daniel, a passionate MERN and Next.js developer. He’s poured his heart into creating a chat app that’s both powerful and easy to use. Zephyr is designed to help you connect with friends and family in a way that’s fun and intuitive, and we’re always working on new and exciting updates!</p>
         </section>
