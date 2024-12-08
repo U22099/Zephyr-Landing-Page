@@ -47,7 +47,7 @@ function CommentCard({ data }) {
           <h3>@{data.senderName}</h3>
           <p>{convertToTimeString(data.timestamp)}</p>
         </header>
-        <p className="text-left text-md">{data.content.length > 500 ? data.content.slice(0, 500)+"..." : data.content}</p>
+        <p className="text-left text-md">{data.content.length > 500 ? (data.content.slice(0, 500)+"...") : data.content}</p>
       </CardContent>
     </Card>
   )
@@ -55,7 +55,7 @@ function CommentCard({ data }) {
 
 function AddComment() {
   const [done, setDone] = useState("");
-  const [loading, setLoading] = useState("");
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState(localStorage.getItem("name") || null);
   const [comment, setComment] = useState("");
   const show = (text) => {
@@ -89,14 +89,11 @@ function AddComment() {
       const res = await addComment(data);
       if (res) {
         show("Done");
-        return;
       } else {
         show("Error");
-        return;
       }
     } catch (err) {
       console.log(err);
-      return;
     } finally {
       setLoading(false);
     }

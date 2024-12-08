@@ -4,9 +4,7 @@ import { Header } from "@/components/home/header";
 import { Hero } from "@/components/home/hero";
 import { Features } from "@/components/home/features";
 import { About } from "@/components/home/about";
-import dynamic from "next/dynamic";
-
-const { Comments } = dynamic(() => import("@/components/home/comments"), {ssr: false});
+import { Comments } from "@/components/home/comments";
 
 export default function Home() {
   return (
