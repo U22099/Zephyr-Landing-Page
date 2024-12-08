@@ -18,8 +18,20 @@ export const connectToDb = async () => {
     }
 }
 
+export const getAllComments = async (setData) => {
+  try {
+    connectToDb();
+    const res = await axios.get("/api/comments/all");
+    if (res.status === 200) {
+      return setData(res.data.data);
+    }
+  } catch (err) {
+    console.log(err, err.message, "getAllComments")
+  }
+}
 
-export const getComments = async (setData = null) => {
+
+export const getComments = async (setData) => {
   try {
     connectToDb();
     const res = await axios.get("/api/comments");
@@ -27,7 +39,7 @@ export const getComments = async (setData = null) => {
       return setData(res.data.data);
     }
   } catch (err) {
-    console.log(err, err.message, "getData")
+    console.log(err, err.message, "getComments")
   }
 }
 
