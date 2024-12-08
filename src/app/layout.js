@@ -64,9 +64,6 @@ export const metadata = {
     description: APP_DESCRIPTION,
   },
 };
-export const viewport = {
-  themeColor: "#5b21b6"
-}
 
 export default function RootLayout({ children }) {
   return (
@@ -76,7 +73,7 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider
               attribute="class"
-              defaultTheme="dark"
+              defaultTheme="system"
               enableSystem
         >
           {children}

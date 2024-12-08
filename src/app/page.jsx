@@ -6,7 +6,7 @@ import { Features } from "@/components/home/features";
 
 export default function Home() {
   return (
-    <main className="w-full flex flex-col gap-3">
+    <main className="w-full flex flex-col">
       <Header />
       <Hero />
       <Features />

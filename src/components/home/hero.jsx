@@ -10,9 +10,9 @@ export function Hero(){
         alt="Zephyr Chat"
         className="z-[-10]"
       />
-      <div className="flex flex-col justify-center items-center text-center w-fit p-4 rounded backdrop-blur-xl">
+      <div className="flex flex-col justify-center items-center text-center w-2/3 p-4 rounded backdrop-blur-xl">
         <h1 className="text-3xl font-extrabold text-primary">Zephyr: Your All-in-One Chat App</h1>
-        <h3 className="text-md text-muted-foreground font-bold">Connect, chat, and create with seamless communication</h3>
+        <h3 className="text-md text-black font-bold">Connect, chat, and create with seamless communication</h3>
       </div>
     </main>
   )
