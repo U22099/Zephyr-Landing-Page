@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { Comment } from "@/model/comment";
+import axios from "axios";
 
 
 const connection = {};
@@ -20,7 +20,6 @@ export const connectToDb = async () => {
 
 export const getAllComments = async (setData) => {
   try {
-    connectToDb();
     const res = await axios.get("/api/comments/all");
     if (res.status === 200) {
       return setData(res.data.data);
@@ -33,7 +32,6 @@ export const getAllComments = async (setData) => {
 
 export const getComments = async (setData) => {
   try {
-    connectToDb();
     const res = await axios.get("/api/comments");
     if(res.status === 200){
       return setData(res.data.data);
