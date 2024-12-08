@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import Image from "next/image"
 export function About(){
   return(
-    <motion.main id="about" initial = {{opacity: 0}} whileInView = {{opacity: 1}} transition = {{duration: 0.3}} className="flex flex-col w-full relative h-72">
+    <motion.main id="about" initial = {{opacity: 0}} whileInView = {{opacity: 1}} transition = {{duration: 0.3}} className="flex flex-col w-full relative h-72 z-0 justify-center items-center">
       <Image 
-        src="z-coder.jpg"
+        src="/images/z-coder.jpg"
         layout="fill"
         objectFit="cover"
         className="z-[-10]"
       />
-      <section className="w-full flex flex-col z-0">
+      <section className="w-full flex flex-col z-0 backdrop-blur-sm p-2">
         <h1 className="text-2xl text-black dark:text-white border-b-primary border-b-2 w-fit">About the Developer</h1>
         <p className="text-muted-foreground text-md">Built by a Teen, For Everyone</p>
         <section className="flex flex-col justify-center items-center w-full text-md">

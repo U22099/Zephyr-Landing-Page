@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero(){
   return(
-    <main className="flex flex-col w-full h-80 justify-center items-center text-center relative">
+    <main className="flex flex-col w-full h-80 justify-center items-center text-center relative z-0">
       <Image
         src="/images/z-smillingman.jpg"
         objectFit="cover"

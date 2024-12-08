@@ -26,7 +26,7 @@ function FeatureCard({ header, content, image }){
     <motion.div initial = {{opacity: 0, y: 100}} whileInView = {{opacity: 1, y: 0}} transition = {{duration: 0.3}} classm="w-full p-3">
       <Card className="p-2 w-full">
         <CardContent className="flex flex-col items-center text-center">
-          <div className="h-48 w-full relative rounded overflow-hidden">
+          <div className="h-48 w-full relative rounded overflow-hidden z-0">
             <Image
               src={`/images/${image}`}
               objectFit="cover"
