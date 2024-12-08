@@ -34,7 +34,7 @@ export function Comments() {
         <CarouselNext />
       </Carousel>
       <Link className="text-primary underlined" to="/comment">View All</Link>
-      {/*<AddComment />*/}
+      <AddComment />
     </main>
   )
 }
