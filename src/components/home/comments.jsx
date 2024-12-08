@@ -1,10 +1,4 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { ScrollArea, ScrollBar } from "@/components/ui/scrollarea";
 import {
   Card,
   CardContent,
@@ -24,15 +18,11 @@ export function Comments() {
   }, []);
   return (
     <main className="flex justify-center items-center w-full p-2 gap-3">
-      <Carousel>
-        <CarouselContent>
-          {comments.map((x, i) => <CarouselItem key={i}>
-            <CommentCard data={x} />
-          </CarouselItem>)}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <ScrollArea>
+        {comments.map((x, i) => 
+          <CommentCard key={i} data={x} />)}
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
       <Link className="text-primary underlined" to="/comment">View All</Link>
       <AddComment />
     </main>
