@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero(){
   return(
-    <main className="flex flex-col justify-center items-center text-center w-full">
+    <main className="flex flex-col justify-center items-center text-center w-full h-60">
       <Image
         src="/images/z-chats.jpg"
         objectFit="cover"
