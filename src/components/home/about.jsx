@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image"
 export function About(){
   return(
-    <motion.main id="about" initial = {{opacity: 0}} whileInView = {{opacity: 1}} transition = {{duration: 0.3}} className="flex flex-col w-full relative">
+    <motion.main id="about" initial = {{opacity: 0}} whileInView = {{opacity: 1}} transition = {{duration: 0.3}} className="flex flex-col w-full relative h-72">
       <Image 
         src="z-coder.jpg"
         layout="fill"
