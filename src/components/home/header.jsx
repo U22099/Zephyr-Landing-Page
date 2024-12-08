@@ -14,7 +14,7 @@ export function Header(){
         <h1 className="text-2xl text-primary font-bold">Zephyr</h1>
         {!menu ? <CiMenuFries className="text-xl" onClick={() => setMenu(true)}/> : <IoClose className="text-xl" onClick={() => setMenu(false)}/>}
       </header>
-      {menu&&<motion.div transition={{duration: 0.3}} initial={{y: -300, opacity: 0}} animate={{y: 0, opacity: 1}} className="fixed top-14 mx-auto w-[70vw] md:w-full md:flex-row md:justify-between border p-3 py-4 justify-center items-center flex flex-col gap-2 z-50">
+      {menu&&<motion.div transition={{duration: 0.3}} initial={{y: -300, opacity: 0}} animate={{y: 0, opacity: 1}} className="fixed top-14 mx-auto w-[80vw] md:w-full md:flex-row md:justify-between border p-3 py-4 justify-center items-center flex flex-col gap-2 z-40">
         <Button variant="outline" className="w-full" onClick={() => {
           setMenu(false);
         }}> <a href="#features">Features</a> </Button>
