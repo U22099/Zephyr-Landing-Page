@@ -3,7 +3,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation ";
+import { useRouter } from "next/navigation";
 
 export function Header(){
   const [ menu, setMenu ] = useState(false);
