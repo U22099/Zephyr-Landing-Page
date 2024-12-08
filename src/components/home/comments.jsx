@@ -1,4 +1,10 @@
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import {
   Card,
   CardContent,
@@ -18,11 +24,15 @@ export function Comments() {
   }, []);
   return (
     <main className="flex justify-center items-center w-full p-2 gap-3">
-      <ScrollArea>
-        {comments.map((x, i) => 
-          <CommentCard key={i} data={x} />)}
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+      <Carousel>
+        <CarouselContent>
+          {comments.map((x, i) => <CarouselItem key={i}>
+            <CommentCard data={x} />
+          </CarouselItem>)}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
       <Link className="text-primary underlined" to="/comment">View All</Link>
       <AddComment />
     </main>
@@ -79,13 +89,18 @@ function AddComment() {
       const res = await addComment(data);
       if (res) {
         show("Done");
+        return;
       } else {
         show("Error");
+        return;
       }
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
+      return;
+    } finally {
       setLoading(false);
     }
+  }
   return (
     <Card className="p-2 w-full flex justify-center items-center">
       <CardContent className="flex flex-col gap-2 w-full">
