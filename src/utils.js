@@ -22,15 +22,16 @@ export const connectToDb = async () => {
 export const getComments = async (setData = null) => {
   try {
     connectToDb();
-    const { data } = await axios.get("/api/comments");
-    if (setData) return setData(data);
-    return data;
+    const res = await axios.get("/api/comments");
+    if(res.status === 200){
+      return setData(res.data.data);
+    }
   } catch (err) {
     console.log(err, err.message, "getData")
   }
 }
 
-export const addComment = async (data, setData = null) => {
+export const addComment = async (data) => {
   try {
     const res = await axios.post("/api/comments", data);
     if(res.status === 200) return true;
