@@ -3,7 +3,6 @@ import {
   CardContent
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export function Features(){
   const features = [
@@ -26,15 +25,11 @@ function FeatureCard({ header, content, image }){
     <motion.div initial = {{opacity: 0, y: 100}} whileInView = {{opacity: 1, y: 0}} transition = {{duration: 0.3}} classm="w-full p-3">
       <Card className="p-2 w-full">
         <CardContent className="flex flex-col items-center text-center">
-          <div className="h-48 w-full relative rounded overflow-hidden z-0">
-            <Image
-              src={`/images/${image}`}
-              objectFit="cover"
-              layout="fill"
-              alt={header}
-              className="z-0"
-            />
-          </div>
+          <img
+            src={`/images/${image}`}
+            alt={header}
+            className="object-cover w-full h-48 rounded"
+          />
           <h1 className="text-xl font-bold text-black dark:text-white border-b-2 border-b-primary pb-1 w-fit">{header}</h1>
           <p className="text-muted-foreground">{content}</p>
         </CardContent>
