@@ -7,7 +7,7 @@ export function About(){
         src="/images/z-coder.jpg"
         className="object-cover top-0 left-0 w-full h-full absolute"
       />
-      <section className="flex flex-col z-0 backdrop-blur-sm p-2 w-[90vw] z-[10]">
+      <section className="flex flex-col z-0 backdrop-blur-sm p-2 w-[90vw] z-[10] rounded">
         <h1 className="text-2xl text-black dark:text-white border-b-primary border-b-2 w-fit text-white">About the Developer</h1>
         <p className="text-primary text-md">Built by a Teen, For Everyone</p>
         <section className="flex flex-col justify-center items-center w-full text-md">
