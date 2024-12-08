@@ -79,18 +79,13 @@ function AddComment() {
       const res = await addComment(data);
       if (res) {
         show("Done");
-        return;
       } else {
         show("Error");
-        return;
       }
     } catch (err) {
-      console.log(err);
-      return;
-    } finally {
+      console.log(err.message);
       setLoading(false);
     }
-  }
   return (
     <Card className="p-2 w-full flex justify-center items-center">
       <CardContent className="flex flex-col gap-2 w-full">
