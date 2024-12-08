@@ -26,7 +26,7 @@ export function Comments() {
     <main className="flex justify-center items-center w-full p-2 gap-3">
       <Carousel>
         <CarouselContent>
-          {comments&&comments.map((x, i) => <CarouselItem key={i}>
+          {comments.map((x, i) => <CarouselItem key={i}>
             <CommentCard data={x} />
           </CarouselItem>)}
         </CarouselContent>
