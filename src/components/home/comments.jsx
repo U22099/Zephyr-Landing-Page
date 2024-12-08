@@ -1,4 +1,4 @@
-import { ScrollArea, ScrollBar } from "@/components/ui/scrollarea";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
   Card,
   CardContent,
