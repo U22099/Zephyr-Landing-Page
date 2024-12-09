@@ -13,7 +13,7 @@ export default function Home(){
     <main className="w-full flex flex-col gap-2">
       <Header />
       <AddComment setData={setComments} />
-      {comments.map((x, i) => <CommentCard data ={x} key={i} />)};
+      {comments.map((x, i) => <CommentCard data ={x} key={i} />)}
     </main>
   )
 }
