@@ -23,13 +23,13 @@ export function Comments() {
   }, []);
   return (
     <main className="mt-4 flex flex-col justify-center items-center w-full p-2 gap-3">
-      <Carousel className="w-[90vw] max-w-sm">
+      <Carousel className="w-40 max-w-sm h-40">
         <CarouselContent>
           {comments.length ? 
           comments.map((x, i) => <CarouselItem key={i}>
             <CommentCard className="flex flex-col gap-2 w-full p-2 aspect-square" data={{
               ...x,
-              content: x.content.length > 80 ? (x.content.slice(0, 80)+"...") : x.content
+              content: x.content.length > 200 ? (x.content.slice(0, 200)+"...") : x.content
             }} />
           </CarouselItem>) 
           : 
