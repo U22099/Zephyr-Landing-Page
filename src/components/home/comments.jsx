@@ -2,6 +2,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
 } from "@/components/ui/carousel";
 import {
   Card,
@@ -41,6 +43,8 @@ export function Comments() {
             </Card>
           </CarouselItem>}
         </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
       <Link className="text-primary underline" href="/comments">View All</Link>
       <AddComment setData={setComments} />
