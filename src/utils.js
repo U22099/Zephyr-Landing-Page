@@ -22,7 +22,7 @@ export const getAllComments = async (setData) => {
   try {
     const res = await axios.get("/api/comments/all");
     if (res.status === 200) {
-      return setData(res.data.data);
+      setData(res.data.data);
     }
   } catch (err) {
     console.log(err, err.message, "getAllComments")
@@ -34,7 +34,7 @@ export const getComments = async (setData) => {
   try {
     const res = await axios.get("/api/comments");
     if(res.status === 200){
-      return setData(res.data.data);
+      setData(res.data.data);
     }
   } catch (err) {
     console.log(err, err.message, "getComments")

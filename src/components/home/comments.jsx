@@ -48,9 +48,9 @@ export function Comments() {
 
 export function CommentCard({ data }) {
   return (
-    <Card className="flex w-full justify-center items-center p-2">
+    <Card className="flex w-full justify-center items-center p-2 h-40">
       <CardContent className="flex flex-col gap-2">
-        <header className="flex justify-between p-1">
+        <header className="flex justify-between p-1 w-full text-muted-foreground">
           <h3>@{data.senderName}</h3>
           <p>{convertToTimeString(data.timestamp)}</p>
         </header>
