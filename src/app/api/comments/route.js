@@ -6,8 +6,12 @@ import { Comment } from "@/model/comment";
 export const GET = async () => {
   try {
     await connectToDb();
-    const results = await Comment.find({});
-    return NextResponse.json({ data: results.sort((a, b) => b.timestamp - a.timestamp).slice(10) }, { status: 200 });
+    const results = await Comment.find({})
+      .sort({ timestamp: -1 })
+      .limit(10)
+      .lean()
+      .exec();;
+    return NextResponse.json({ data: results }, { status: 200 });
   } catch (err) {
     console.log(err.message, "GET");
     return NextResponse.json({ data: "Error" }, { status: 500 });
