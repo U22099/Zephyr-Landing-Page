@@ -27,9 +27,9 @@ export function Comments() {
     <main className="mt-4 flex flex-col justify-center items-center w-full p-2 gap-3">
       <Carousel>
         <CarouselContent>
-          {comments ? comments.map((x, i) => <CarouselItem key={i}>
+          {comments.length ? comments.map((x, i) => <CarouselItem key={i}>
             <CommentCard data={x} />
-          </CarouselItem>) : <CarouselItem> No Comments </CarouselItem>}
+          </CarouselItem>) : <CarouselItem> <p className="text-2xl font-bold">No Comments</p> </CarouselItem>}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
