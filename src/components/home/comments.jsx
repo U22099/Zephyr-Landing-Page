@@ -22,11 +22,11 @@ export function Comments() {
     getComments(setComments);
   }, []);
   return (
-    <main className="mt-4 flex flex-col justify-center items-center w-full p-2 gap-3">
-      <Carousel className="w-60 max-w-sm h-48">
+    <main className="mt-4 flex flex-col justify-center items-center w-full p-2 gap-3 h-fit">
+      <Carousel className="w-60 max-w-[2/3] h-48">
         <CarouselContent>
           {comments.length ? 
-          comments.map((x, i) => <CarouselItem key={i}>
+          comments.map((x, i) => <CarouselItem key={i} className="md:basis-1/3">
             <CommentCard className="flex flex-col gap-2 w-full p-2 aspect-square" data={{
               ...x,
               content: x.content.length > 120 ? (x.content.slice(0, 120)+"...") : x.content
