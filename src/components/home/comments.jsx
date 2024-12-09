@@ -29,7 +29,13 @@ export function Comments() {
         <CarouselContent>
           {comments.length ? comments.map((x, i) => <CarouselItem key={i}>
             <CommentCard data={x} />
-          </CarouselItem>) : <CarouselItem> <p className="text-2xl font-bold">No Comments</p> </CarouselItem>}
+          </CarouselItem>) : <CarouselItem>
+            <Card>
+              <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-2xl font-semibold">No Comments</span>
+              </CardContent>
+            </Card>
+          </CarouselItem>}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
