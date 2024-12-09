@@ -93,6 +93,11 @@ export function AddComment({ setData }) {
             limit: 1,
             timestamp: Date.now()
           }));
+        } else if (limit.count >= 1) {
+          localStorage.setItem("limit", JSON.stringify({
+            limit: limit.count + 1,
+            timestamp: limit.timestamp
+          }));
         }
       } else {
         localStorage.setItem("limit", JSON.stringify({
@@ -116,6 +121,7 @@ export function AddComment({ setData }) {
     } catch (err) {
       console.log(err);
     } finally {
+      setComment("");
       setLoading(false);
     }
   };
@@ -129,7 +135,7 @@ export function AddComment({ setData }) {
         <Input id="name" defaultValue={name} placeholder="Enter a name" onChange={(e) => setName(e.target.value)} />
         
         <Label htmlFor="comment">Comment*</Label>
-        <Textarea id="comment" placeholder="Type in a comment" onChange={(e) => setComment(e.target.value)} />
+        <Textarea id="comment" placeholder="Type in a comment" value={comment} onChange={(e) => setComment(e.target.value)} />
         
         <Button className="w-full" disabled={!name || !comment} onClick={sendComment}>{loading ? <AiOutlineLoading className="animate-spin text-md"/> : (done ? done : "Send Comment")}</Button>
       </CardContent>
