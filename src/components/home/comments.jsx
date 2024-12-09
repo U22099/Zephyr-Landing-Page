@@ -33,7 +33,7 @@ export function Comments() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <Link className="text-primary underlined" href="/comment">View All</Link>
+      <Link className="text-primary underlined" to="/comment">View All</Link>
       <AddComment />
     </main>
   )
@@ -56,7 +56,7 @@ function CommentCard({ data }) {
 function AddComment() {
   const [done, setDone] = useState("");
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState(localStorage.getItem("name") || null);
+  const [name, setName] = useState();
   const [comment, setComment] = useState("");
   const show = (text) => {
     setLoading(false);
@@ -97,7 +97,10 @@ function AddComment() {
     } finally {
       setLoading(false);
     }
-  }
+  };
+  useEffect(() => {
+    setName(localStorage.getItem("name"));
+  }, []);
   return (
     <Card className="p-2 w-full flex justify-center items-center">
       <CardContent className="flex flex-col gap-2 w-full">
