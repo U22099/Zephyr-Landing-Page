@@ -113,5 +113,5 @@ function AddComment() {
         <Button className="w-full" disabled={!name || !comment} onClick={sendComment}>Send Comment</Button>
       </CardContent>
     </Card>
-  );
+  )
 }
