@@ -23,7 +23,7 @@ export function Comments() {
     getComments(setComments);
   }, []);
   return (
-    <main className="flex justify-center items-center w-full p-2 gap-3">
+    <main className="flex flex-col justify-center items-center w-full p-2 gap-3">
       <Carousel>
         <CarouselContent>
           {comments.map((x, i) => <CarouselItem key={i}>
@@ -33,7 +33,7 @@ export function Comments() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <Link className="text-primary underlined" href="/comment">View All</Link>
+      <Link className="text-primary underline" href="/comment">View All</Link>
       <AddComment />
     </main>
   )
