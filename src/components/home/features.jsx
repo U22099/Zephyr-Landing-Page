@@ -15,7 +15,9 @@ export function Features(){
   return(
     <main id="features" className="mt-5 w-full gap-3 flex flex-col p-2">
       <motion.h1 initial = {{opacity: 0}} whileInView = {{opacity: 1}} transition = {{duration: 0.3}} className="text-xl font-bold text-black dark:text-white border-b-2 border-b-primary pb-1 mb-2 w-fit">What Makes Zephyr Awesome?</motion.h1>
-      {features.map((feature, i) => <FeatureCard key={i} content={feature.content} header={feature.header} image={feature.image}/>)}
+      <section className="flex flex-col md:flex-row md:flex-wrap gap-2 w-full">
+        {features.map((feature, i) => <FeatureCard key={i} content={feature.content} header={feature.header} image={feature.image}/>)}
+      </section>
     </main>
   )
 }
