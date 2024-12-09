@@ -92,13 +92,13 @@ export function AddComment({ setData }) {
           return;
         } else if ((diff > day) && limit > 3) {
           localStorage.setItem("limit", JSON.stringify({
-            limit: 1,
+            count: 1,
             timestamp: Date.now()
           }));
         }
       } else {
         localStorage.setItem("limit", JSON.stringify({
-          limit: 1,
+          count: 1,
           timestamp: Date.now()
         }));
       }
