@@ -27,9 +27,12 @@ export function Comments() {
     <main className="mt-4 flex flex-col justify-center items-center w-full p-2 gap-3">
       <Carousel>
         <CarouselContent>
-          {comments.length ? comments.map((x, i) => <CarouselItem key={i}>
+          {comments.length ? 
+          comments.map((x, i) => <CarouselItem key={i}>
             <CommentCard data={x} />
-          </CarouselItem>) : <CarouselItem>
+          </CarouselItem>) 
+          : 
+          <CarouselItem>
             <Card>
               <CardContent className="flex aspect-square items-center justify-center p-6">
                   <span className="text-2xl font-semibold">No Comments</span>
@@ -49,7 +52,7 @@ export function Comments() {
 export function CommentCard({ data }) {
   return (
     <Card className="flex w-full justify-center items-center p-2 h-40">
-      <CardContent className="flex flex-col gap-2">
+      <CardContent className="flex flex-col gap-2 w-full">
         <header className="flex justify-between p-1 w-full text-muted-foreground">
           <h3>@{data.senderName}</h3>
           <p>{convertToTimeString(data.timestamp)}</p>

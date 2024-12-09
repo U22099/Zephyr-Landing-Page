@@ -12,8 +12,10 @@ export default function Home(){
   return(
     <main className="w-full flex flex-col gap-2">
       <Header />
-      <AddComment setData={setComments} />
-      {comments.map((x, i) => <CommentCard data ={x} key={i} />)}
+      <section className="flex flex-col gap-4 p-4">
+        <AddComment setData={setComments} />
+        {comments.map((x, i) => <CommentCard data ={x} key={i} />)}
+      </section>
     </main>
   )
 }
