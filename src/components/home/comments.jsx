@@ -25,11 +25,11 @@ export function Comments() {
   }, []);
   return (
     <main className="mt-4 flex flex-col justify-center items-center w-full p-2 gap-3">
-      <Carousel className="w-full max-w-sm">
+      <Carousel className="w-[90vw] max-w-sm">
         <CarouselContent>
           {comments.length ? 
           comments.map((x, i) => <CarouselItem key={i}>
-            <CommentCard data={{
+            <CommentCard className="flex flex-col gap-2 w-full p-2 aspect-square" data={{
               ...x,
               content: x.content.length > 80 ? (x.content.slice(0, 80)+"...") : x.content
             }} />
@@ -37,7 +37,7 @@ export function Comments() {
           : 
           <CarouselItem>
             <Card>
-              <CardContent className="flex aspect-square items-center justify-center p-6">
+              <CardContent className="flex aspect-square items-center justify-center p-2">
                   <span className="text-2xl font-semibold">No Comments</span>
               </CardContent>
             </Card>
@@ -52,10 +52,10 @@ export function Comments() {
   )
 }
 
-export function CommentCard({ data }) {
+export function CommentCard({ data, className }) {
   return (
     <Card className="flex w-full justify-center items-start p-1 h-full">
-      <CardContent className="flex flex-col gap-2 w-full p-2">
+      <CardContent className={className}>
         <header className="flex justify-between p-1 w-full text-muted-foreground">
           <h3>@{data.senderName}</h3>
           <p>{convertToTimeString(data.timestamp)}</p>
