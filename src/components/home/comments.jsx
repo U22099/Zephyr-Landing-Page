@@ -29,7 +29,7 @@ export function Comments() {
         <CarouselContent>
           {comments.length ? 
           comments.map((x, i) => <CarouselItem className="md:basis-1/4" key={i}>
-            <div className="aspect-square">
+            <div className="p-1">
             <CommentCard data={{
               ...x,
               content: x.content.length > 80 ? (x.content.slice(0, 80)+"...") : x.content
