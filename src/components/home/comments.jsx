@@ -15,6 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { addComment, getComments, convertToTimeString } from "@/utils";
 import { useState, useEffect } from "react";
+import { AiOutlineLoading } from "react-icons/ai";
 import Link from "next/link";
 
 export function Comments() {
@@ -23,17 +24,17 @@ export function Comments() {
     getComments(setComments);
   }, []);
   return (
-    <main className="flex flex-col justify-center items-center w-full p-2 gap-3">
+    <main className="mt-4 flex flex-col justify-center items-center w-full p-2 gap-3">
       <Carousel>
         <CarouselContent>
-          {comments.map((x, i) => <CarouselItem key={i}>
+          {comments ? comments.map((x, i) => <CarouselItem key={i}>
             <CommentCard data={x} />
-          </CarouselItem>)}
+          </CarouselItem>) : <CarouselItem> No Comments </CarouselItem>}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <Link className="text-primary underline" href="/comment">View All</Link>
+      <Link className="text-primary underline" href="/comments">View All</Link>
       <AddComment />
     </main>
   )
@@ -110,7 +111,7 @@ function AddComment() {
         <Label htmlFor="comment">Comment*</Label>
         <Textarea id="comment" placeholder="Type in a comment" onChange={(e) => setComment(e.target.value)} />
         
-        <Button className="w-full" disabled={!name || !comment} onClick={sendComment}>Send Comment</Button>
+        <Button className="w-full" disabled={!name || !comment} onClick={sendComment}>{loading ? <AiOutlineLoading className="animate-spin text-md"/> : (done ? done : "Send Comment")}</Button>
       </CardContent>
     </Card>
   )

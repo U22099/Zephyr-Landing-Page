@@ -1,7 +1,7 @@
 export function Contact(){
   return(
-    <main className="flex flex-col justify-center items-start text-start p-3">
-      <h2 className="text-2xl border-b-2 border-b-primary pb-2 font-bold">Contact The Developer</h2>
+    <main className="flex flex-col justify-center items-start text-start p-3 gap-2">
+      <h2 className="text-2xl border-b-2 border-b-primary pb-1 font-bold">Contact The Developer</h2>
       <div className="flex gap-1 justify-start">
         <span className="text-md font-bold">Email:</span>
         <a className="text-md font-bold text-primary underline" href="mailto:u22099dandev@gmail.com">u22099dandev@gmail.com</a>
