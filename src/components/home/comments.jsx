@@ -28,7 +28,7 @@ export function Comments() {
       <Carousel>
         <CarouselContent>
           {comments.length ? 
-          comments.map((x, i) => <CarouselItem className="flex w-full justify-center items-start p-1 h-40" key={i}>
+          comments.map((x, i) => <CarouselItem className="flex w-60 justify-center items-start p-1 h-40" key={i}>
             <CommentCard data={{
               ...x,
               content: x.content.length > 80 ? (x.content.slice(0, 80)+"...") : x.content
