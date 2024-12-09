@@ -17,7 +17,7 @@ export const GET = async () => {
 export const POST = async (req) => {
   try {
     await connectToDb();
-    const { content, senderName, timestamp } = req.json();
+    const { content, senderName, timestamp } = await req.json();
     await Comment.create({
       content,
       senderName,
