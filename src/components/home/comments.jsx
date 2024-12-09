@@ -83,7 +83,7 @@ export function AddComment({ setData }) {
         const diff = Date.now() - limit.timestamp;
         if (limit.count > 0) {
           localStorage.setItem("limit", JSON.stringify({
-            limit: limit.count + 1,
+            count: limit.count + 1,
             timestamp: limit.timestamp
           }));
         } else if ((limit.count > 3) && (diff < day)) {
