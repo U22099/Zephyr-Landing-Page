@@ -35,12 +35,12 @@ export function Comments() {
         <CarouselNext />
       </Carousel>
       <Link className="text-primary underline" href="/comments">View All</Link>
-      <AddComment />
+      <AddComment setData={setComments} />
     </main>
   )
 }
 
-function CommentCard({ data }) {
+export function CommentCard({ data }) {
   return (
     <Card className="flex w-full justify-center items-center p-2">
       <CardContent className="flex flex-col gap-2">
@@ -54,7 +54,7 @@ function CommentCard({ data }) {
   )
 }
 
-function AddComment() {
+export function AddComment({ setData }) {
   const [done, setDone] = useState("");
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState();
@@ -70,12 +70,19 @@ function AddComment() {
     try {
       setLoading(true);
       const limit = JSON.parse(localStorage.getItem("limit"));
-      const day = 24 * 60 * 60 * 1000;
-      const diff = Date.now() - limit.timestamp;
-      if ((limit.count > 2) && (diff < day)) {
-        show("Limit Reached");
-        return;
-      } else if ((diff > day) || !limit) {
+      if (limit) {
+        const day = 24 * 60 * 60 * 1000;
+        const diff = Date.now() - limit.timestamp;
+        if ((limit.count > 2) && (diff < day)) {
+          show("Limit Reached");
+          return;
+        } else if (diff > day) {
+          localStorage.setItem("limit", JSON.stringify({
+            limit: 1,
+            timestamp: Date.now()
+          }));
+        }
+      } else {
         localStorage.setItem("limit", JSON.stringify({
           limit: 1,
           timestamp: Date.now()
@@ -90,6 +97,7 @@ function AddComment() {
       const res = await addComment(data);
       if (res) {
         show("Done");
+        setData(prev => [data, ...prev]);
       } else {
         show("Error");
       }
