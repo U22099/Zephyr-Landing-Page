@@ -14,7 +14,7 @@ export default function Home(){
       <Header />
       <section className="flex flex-col gap-4 p-4">
         <AddComment setData={setComments} />
-        {comments.map((x, i) => <CommentCard data ={x} key={i} />)}
+        {comments.map((x, i) => <CommentCard className={"flex w-full justify-center items-start p-1 h-full"} data={x} key={i} />)}
       </section>
     </main>
   )
