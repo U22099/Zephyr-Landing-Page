@@ -33,7 +33,7 @@ export function Comments() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <Link className="text-primary underlined" to="/comment">View All</Link>
+      <Link className="text-primary underlined" href="/comment">View All</Link>
       <AddComment />
     </main>
   )
