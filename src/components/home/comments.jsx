@@ -81,16 +81,16 @@ export function AddComment({ setData }) {
       if (limit) {
         const day = 24 * 60 * 60 * 1000;
         const diff = Date.now() - limit.timestamp;
-        if (limit.count > 0) {
+        if (limit.count > 0 && limit.count < 3) {
           localStorage.setItem("limit", JSON.stringify({
             count: limit.count + 1,
             timestamp: limit.timestamp
           }));
-        } else if ((limit.count > 3) && (diff < day)) {
-
+        } else if (limit.count >= 3 && diff < day) {
+          setComment("");
           show("Limit Reached");
           return;
-        } else if ((diff > day) && limit > 3) {
+        } else if (diff > day && limit >= 3) {
           localStorage.setItem("limit", JSON.stringify({
             count: 1,
             timestamp: Date.now()

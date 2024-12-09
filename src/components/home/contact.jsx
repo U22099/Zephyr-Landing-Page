@@ -14,6 +14,14 @@ export function Contact(){
         <span className="text-md font-bold">GitHub:</span>
         <a className="text-md font-bold text-primary underline" href="https://github.com/U22099">Daniel</a>
       </div>
+      <div className="flex gap-1 justify-start">
+        <span className="text-md font-bold">X(Twitter):</span>
+        <a className="text-md font-bold text-primary underline" href="https://x.com/dan_22099?s=21">Daniel</a>
+      </div>
+      <div className="flex gap-1 justify-start">
+        <span className="text-md font-bold">X(Twitter):</span>
+        <a className="text-md font-bold text-primary underline" href="https://linkedin.com/in/daniel-16496931a">Daniel</a>
+      </div>
     </main>
   )
 }
