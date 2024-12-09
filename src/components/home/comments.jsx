@@ -29,7 +29,10 @@ export function Comments() {
         <CarouselContent>
           {comments.length ? 
           comments.map((x, i) => <CarouselItem className="flex w-full justify-center items-start p-1 h-40" key={i}>
-            <CommentCard data={x} />
+            <CommentCard data={{
+              ...x,
+              content: x.content.length > 80 ? (x.content.slice(0, 80)+"...") : x.content
+            }} />
           </CarouselItem>) 
           : 
           <CarouselItem>
@@ -51,13 +54,13 @@ export function Comments() {
 
 export function CommentCard({ data }) {
   return (
-    <Card className="flex w-full justify-center items-start p-1 h-40">
+    <Card className="flex w-full justify-center items-start p-1 h-full">
       <CardContent className="flex flex-col gap-2 w-full p-2">
         <header className="flex justify-between p-1 w-full text-muted-foreground">
           <h3>@{data.senderName}</h3>
           <p>{convertToTimeString(data.timestamp)}</p>
         </header>
-        <p className="text-left text-md">{data.content.length > 500 ? (data.content.slice(0, 500)+"...") : data.content}</p>
+        <p className="text-left text-md">{data.content}</p>
       </CardContent>
     </Card>
   )
