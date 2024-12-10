@@ -46,7 +46,7 @@ export function Comments() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <Link className="mt-6 text-primary underline" href="/comments">View All</Link>
+      <Link className="mt-8 text-primary underline" href="/comments">View All</Link>
       <AddComment setData={setComments} />
     </main>
   )

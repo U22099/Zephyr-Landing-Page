@@ -10,27 +10,27 @@ export function Contact(){
       <div className="flex gap-1 justify-start items-center">
         <MdAttachEmail className="text-xl"/>
         <span className="text-md font-bold">Email:</span>
-        <a className="text-md font-bold text-primary underline" href="mailto:u22099dandev@gmail.com">u22099dandev@gmail.com</a>
+        <a target="_blank" className="text-md font-bold text-primary underline" href="mailto:u22099dandev@gmail.com">u22099dandev@gmail.com</a>
       </div>
       <div className="flex gap-1 justify-start items-center">
         <IoLogoWhatsapp className="text-xl"/>
         <span className="text-md font-bold">WhatsApp:</span>
-        <a className="text-md font-bold text-primary underline" href="https://wa.me/+2349033572229">+2349033572229</a>
+        <a target="_blank" className="text-md font-bold text-primary underline" href="https://wa.me/+2349033572229">+2349033572229</a>
       </div>
       <div className="flex gap-1 justify-start items-center">
         <FaGithub className="text-xl"/>
         <span className="text-md font-bold">GitHub:</span>
-        <a className="text-md font-bold text-primary underline" href="https://github.com/U22099">Daniel</a>
+        <a target="_blank" className="text-md font-bold text-primary underline" href="https://github.com/U22099">Daniel</a>
       </div>
       <div className="flex gap-1 justify-start items-center">
         <FaXTwitter className="text-xl"/>
         <span className="text-md font-bold">X(formerly twitter):</span>
-        <a className="text-md font-bold text-primary underline" href="https://x.com/dan_22099?s=21">Daniel</a>
+        <a target="_blank" className="text-md font-bold text-primary underline" href="https://x.com/dan_22099?s=21">Daniel</a>
       </div>
       <div className="flex gap-1 justify-start items-center">
         <FaLinkedin className="text-xl"/>
         <span className="text-md font-bold">LinkedIn:</span>
-        <a className="text-md font-bold text-primary underline" href="https://linkedin.com/in/daniel-16496931a">Daniel</a>
+        <a target="_blank" className="text-md font-bold text-primary underline" href="https://linkedin.com/in/daniel-16496931a">Daniel</a>
       </div>
     </main>
   )
