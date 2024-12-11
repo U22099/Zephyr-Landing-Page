@@ -10,7 +10,7 @@ export const GET = async () => {
       .sort({ timestamp: -1 })
       .limit(10)
       .lean()
-      .exec();;
+      .exec();
     return NextResponse.json({ data: results }, { status: 200 });
   } catch (err) {
     console.log(err.message, "GET");
