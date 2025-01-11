@@ -6,7 +6,7 @@ import { Comment } from "@/model/comment";
 export const GET = async () => {
   try {
     await connectToDb();
-    const results = await Comment.find({})
+    const results = await Comment.find()
     .sort({ timestamp: -1 })
     .lean();
     return NextResponse.json({ data: results}, { status: 200 });

@@ -14,7 +14,7 @@ export default function Home(){
       <Header />
       <section className="flex flex-col gap-4 p-4">
         <AddComment setData={setComments} />
-        {comments.sort((a,b) => b.timestamp - a.timestamp).map((x, i) => <CommentCard className="flex flex-col gap-2 w-full p-2" data ={x} key={i} />)}
+        {comments.map((x, i) => <CommentCard className="flex flex-col gap-2 w-full p-2" data ={x} key={i} />)}
       </section>
     </main>
   )
