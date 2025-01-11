@@ -33,7 +33,6 @@ export const getAllComments = async (setData) => {
 export const getComments = async (setData) => {
   try {
     const res = await axios.get("/api/comments");
-    console.log(res.data);
     if(res.status === 200){
       setData(res.data.data);
     }
