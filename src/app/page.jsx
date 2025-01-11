@@ -8,7 +8,6 @@ import { Comments } from "@/components/home/comments";
 import { Contact } from "@/components/home/contact";
 
 export default function Home() {
-  console.log("Hey dev😉","careful with the tokens and storage data😂", "web github repo: https://github.com/U22099/Zephyr-Landing-Page")
   return (
     <main className="w-full flex flex-col">
       <Header />

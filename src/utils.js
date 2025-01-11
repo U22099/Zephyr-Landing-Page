@@ -67,3 +67,5 @@ export function convertToTimeString(timestamp) {
     return new Date(timestamp).toLocaleTimeString("en-UK", { hour12: true, hour: "numeric", minute: "numeric" });
   }
 }
+
+console.log("Hey dev😉","careful with the tokens and storage data😂", "web github repo: https://github.com/U22099/Zephyr-Landing-Page");
