@@ -30,7 +30,7 @@ function FeatureCard({ header, content, image }){
           <img
             src={`/images/${image}`}
             alt={header}
-            className="object-cover w-full h-48 rounded"
+            className="object-cover w-full h-48 rounded max-w-1/3"
           />
           <h1 className="text-xl font-bold text-black dark:text-white border-b-2 border-b-primary pb-1 w-fit">{header}</h1>
           <p className="text-muted-foreground">{content}</p>
