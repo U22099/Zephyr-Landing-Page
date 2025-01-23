@@ -1,16 +1,20 @@
+"use client";
+
 import {
   Card,
   CardContent
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 export function Features(){
+  const isMobile = useIsMobile();
   const features = [
-    {header: "Personal Chats", content: "Seamless one-on-one chats with text, images, videos, and audio", image: "z-chats.jpg"},
-    {header: "Group Chat", content: "Create vibrant group chats and share the fun with friends", image: "z-newchats.jpg"},
-    {header: "Video/Voice Calls", content: "Stay connected face-to-face or via voice calls", image: "z-call1.jpg"},
-    {header: "Status Updates", content: "Share memories and status post anywhere anytime", image: "z-status.jpg"},
-    {header: "AI Chatbot and Customization", content: "Smart AI chatbot and fully customizable interface", image: "z-ai.jpg"},
+    {header: "Personal Chats", content: "Seamless one-on-one chats with text, images, videos, and audio", image: isMobile ? "z-chats.jpg" : "z-chats-desktop.jpg"},
+    {header: "Group Chat", content: "Create vibrant group chats and share the fun with friends", image: isMobile ? "z-newchats.jpg" : "z-newchats-desktop.jpg"},
+    {header: "Video/Voice Calls", content: "Stay connected face-to-face or via voice calls", image: isMobile ? "z-call1.jpg" : "z-call1-desktop.jpg"},
+    {header: "Status Updates", content: "Share memories and status post anywhere anytime", image: isMobile ? "z-status.jpg" : "z-status-desktop.jpg"},
+    {header: "AI Chatbot and Customization", content: "Smart AI chatbot and fully customizable interface", image: isMobile ? "z-ai.jpg" : "z-ai-desktop.jpg"},
   ]
   return(
     <main id="features" className="mt-5 w-full gap-3 flex flex-col p-2">
