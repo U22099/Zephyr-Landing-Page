@@ -25,7 +25,7 @@ export function Comments() {
   }, []);
   return (
     <main className="mt-4 flex flex-col justify-center items-center w-full p-2 gap-3 h-fit">
-      <Carousel className="w-60 md:w-1/3 max-w-[60vw] h-fit mb-2">
+      <Carousel className="w-60 md:w-full max-w-[60vw] h-fit mb-2">
         <CarouselContent>
           {comments.length ? 
           comments.map((x, i) => <CarouselItem key={i} className="md:basis-1/3">
